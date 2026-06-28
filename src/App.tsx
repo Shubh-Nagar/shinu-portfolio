@@ -2,7 +2,7 @@ import { Suspense, lazy, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import GrainOverlay from "./components/GrainOverlay";
+// import GrainOverlay from "./components/GrainOverlay";
 import { site } from "./data/site";
 
 // Code splitting: below-the-fold sections load on demand to keep the initial
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <>
-      <GrainOverlay />
+      
       <Navbar />
 
       <main>

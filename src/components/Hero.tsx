@@ -20,29 +20,16 @@ export default function Hero({ onWatchShowreel }: Props) {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden lg:block"
     >
-      {/* Background image layer — REPLACE with Shinu's hero portrait */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=70"
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover opacity-40"
-          loading="eager"
-          fetchPriority="high"
-        />
-        {/* Tonal gradients to seat the type */}
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/60" />
+      {/* Dark base + warm glow behind Shinu (ties his bokeh into the page) */}
+      <div className="absolute inset-0 bg-ink" aria-hidden="true">
+        <div className="absolute right-0 top-1/2 h-[80%] w-2/3 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(217,122,43,0.22),transparent_65%)] blur-2xl" />
       </div>
 
-      {/* Gold volumetric light-sweep — the hero's signature atmosphere */}
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        <div className="absolute -left-1/4 top-0 h-full w-1/3 animate-sweep bg-gradient-to-r from-transparent via-gold/25 to-transparent blur-2xl" />
+      {/* Gold volumetric light-sweep — hero signature */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -left-1/4 top-0 h-full w-1/3 animate-sweep bg-gradient-to-r from-transparent via-gold/20 to-transparent blur-2xl" />
       </div>
 
       {/* Drifting embers */}
@@ -50,68 +37,78 @@ export default function Hero({ onWatchShowreel }: Props) {
         <EmberCanvas />
       </div>
 
-      {/* Content */}
-      <div className="container-x relative z-10 flex flex-col items-center text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="eyebrow mb-6"
-        >
-          {site.role}
-        </motion.p>
+      {/* Shinu — desktop: bleeds from the right; mobile: stacked below the copy */}
+      <motion.img
+        src="/shinu-hero.png"
+        alt="Shinu Rajoriya holding a gimbal-mounted cinema camera"
+        initial={{ opacity: 0, scale: 1.04 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+        loading="eager"
+        fetchPriority="high"
+        className="order-2 z-[5] mx-auto mt-6 max-h-[46vh] w-auto select-none object-contain
+                   lg:absolute lg:bottom-0 lg:right-0 lg:order-none lg:mx-0 lg:mt-0
+                   lg:h-[94%] lg:max-h-none xl:right-[2%]"
+      />
 
-        <motion.h1
-          initial="hidden"
-          animate="show"
-          className="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-semibold leading-[0.92] tracking-tight"
-        >
-          <motion.span
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              show: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="block text-bone"
+      {/* Copy */}
+      <div className="container-x relative z-10 order-1 lg:flex lg:min-h-[100svh] lg:items-center">
+        <div className="max-w-xl text-center lg:max-w-[52%] lg:text-left">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="eyebrow mb-6"
           >
-            I Don't Just Edit,
-          </motion.span>
-          <motion.span
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              show: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
-            className="block italic text-gold-grad"
+            {site.role}
+          </motion.p>
+
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            className="font-display font-semibold leading-[0.92] tracking-tight text-[clamp(2.5rem,7vw,6rem)]"
           >
-            I Tell Stories
-          </motion.span>
-        </motion.h1>
+            <motion.span
+              variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              className="block text-bone"
+            >
+              I Don't Just Edit,
+            </motion.span>
+            <motion.span
+              variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.28 }}
+              className="block italic text-gold-grad"
+            >
+              I Tell Stories
+            </motion.span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-7 max-w-xl text-balance text-base text-ash sm:text-lg"
-        >
-          Cinematic visual storyteller capturing weddings, brands and the world
-          from the sky — {site.tagline.toLowerCase()}.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mx-auto mt-7 max-w-md text-balance text-base text-ash sm:text-lg lg:mx-0"
+          >
+            Cinematic editor & visual storyteller capturing weddings, brands and
+            the world from the sky — {site.tagline.toLowerCase()}.
+          </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.66 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
-        >
-          <button type="button" onClick={onWatchShowreel} className="btn-primary">
-            <Play size={16} className="fill-ink" />
-            Watch Showreel
-          </button>
-          <a href="#work" className="btn-ghost">
-            View Portfolio
-          </a>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.66 }}
+            className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start"
+          >
+            <button type="button" onClick={onWatchShowreel} className="btn-primary">
+              <Play size={16} className="fill-ink" />
+              Watch Showreel
+            </button>
+            <a href="#work" className="btn-ghost">
+              View Portfolio
+            </a>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll cue */}
@@ -121,13 +118,13 @@ export default function Hero({ onWatchShowreel }: Props) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.1 }}
-        className="absolute bottom-24 z-10 text-ash transition-colors hover:text-gold sm:bottom-28"
+        className="absolute bottom-24 left-1/2 z-10 hidden -translate-x-1/2 text-ash transition-colors hover:text-gold sm:bottom-28 lg:left-12 lg:block lg:translate-x-0"
       >
         <ArrowDown size={22} className="animate-floaty" />
       </motion.a>
 
       {/* Bottom marquee strip */}
-      <div className="absolute bottom-0 left-0 z-10 w-full overflow-hidden border-y border-ink-600/60 bg-ink/40 py-3 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 z-20 w-full overflow-hidden border-y border-ink-600/60 bg-ink/60 py-3 backdrop-blur-sm">
         <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span
