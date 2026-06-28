@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor jumps so the fixed navbar doesn't cover headings */
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-ink text-bone font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Cinematic text selection */
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-ink;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-deep;
+  }
+
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-ink;
+  }
+}
+
+@layer components {
+  /* Shared section container */
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Uppercase tracked eyebrow label */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest2 text-gold;
+  }
+
+  /* Gold gradient text for accent words */
+  .text-gold-grad {
+    @apply bg-gradient-to-br from-gold-light via-gold to-gold-deep bg-clip-text text-transparent;
+  }
+
+  /* Primary CTA */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5
+           font-mono text-sm font-semibold uppercase tracking-wider text-ink
+           transition-all duration-300 hover:bg-gold-light hover:shadow-gold;
+  }
+
+  /* Secondary / ghost CTA */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-600
+           px-7 py-3.5 font-mono text-sm font-semibold uppercase tracking-wider text-bone
+           transition-all duration-300 hover:border-gold hover:text-gold;
+  }
+}
+
+@layer utilities {
+  /* Cinematic film-grain overlay (applied to a fixed top layer) */
+  .film-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Subtle radial vignette */
+  .vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      transparent 55%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+  }
+
+  /* 2.39:1 cinema letterbox aspect for portfolio cards */
+  .aspect-cinema {
+    aspect-ratio: 2.39 / 1;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
