@@ -64,7 +64,7 @@ export default function ShowreelModal({ url, onClose }: Props) {
         ) : (
           <iframe
             src={`${url}?autoplay=1&rel=0`}
-            title="Shinu Rajoriya Showreel"
+            title="Arjun Mehra Showreel"
             allow="autoplay; fullscreen; encrypted-media"
             allowFullScreen
             className="aspect-video h-full w-full rounded-lg bg-black shadow-gold"

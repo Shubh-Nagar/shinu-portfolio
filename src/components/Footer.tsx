@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <a href="#hero" className="font-display text-2xl font-semibold text-bone">
-              Shinu<span className="text-gold">.</span>
+              Arjun<span className="text-gold">.</span>
             </a>
             <p className="mt-4 font-display text-lg italic text-gold">
               {site.tagline}

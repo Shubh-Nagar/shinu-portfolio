@@ -3,14 +3,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const site = {
-  name: "Shinu Rajoriya",
+  name: "Arjun Mehra",
   role: "Cinematic Videographer • Photographer • Drone Pilot",
   tagline: "Turning Moments into Masterpieces",
-  email: "hello@shinufilms.com", // TODO: replace with real email
+  email: "hello@arjunmehrafilms.com", // TODO: replace with real email
   phone: "+91 90000 00000", // TODO: replace with real phone
   location: "Indore, India",
   socials: {
-    instagram: "https://www.instagram.com/shinuu_films_41",
+    instagram: "https://www.instagram.com/arjunmehra.films",
     youtube: "#", // TODO: add channel
     whatsapp: "https://wa.me/919000000000", // TODO: replace number
   },

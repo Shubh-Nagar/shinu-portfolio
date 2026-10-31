@@ -67,7 +67,7 @@ export interface WorkItem {
   id: string;
   title: string;
   category: WorkCategory;
-  /** Poster/thumbnail image. Swap for Shinu's real stills. */
+  /** Poster/thumbnail image. Swap for Arjun's real stills. */
   thumb: string;
   /** Optional looping preview that plays on hover (muted .mp4). */
   preview?: string;
@@ -80,7 +80,7 @@ export interface WorkItem {
 }
 
 // Placeholder media. Replace `thumb`/`preview`/`full` with real assets pulled
-// from @shinuu_films_41. Stock images keep the layout production-ready.
+// from @arjunmehra.films. Stock images keep the layout production-ready.
 const img = (q: string) =>
   `https://images.unsplash.com/${q}?auto=format&fit=crop&w=1200&q=70`;
 
@@ -179,7 +179,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Shinu didn't just film our wedding — he captured the feeling of the day. Watching it back, we relive every emotion.",
+      "Arjun didn't just film our wedding — he captured the feeling of the day. Watching it back, we relive every emotion.",
     name: "Aarav & Meera",
     role: "Wedding Film",
   },

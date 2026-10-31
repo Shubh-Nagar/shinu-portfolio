@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-28 sm:py-36">
       <div className="container-x grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-        {/* Portrait — REPLACE with Shinu's real photo */}
+        {/* Portrait — REPLACE with Arjun's real photo */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -17,7 +17,7 @@ export default function About() {
           <div className="relative overflow-hidden rounded-2xl border border-ink-600">
             <img
               src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=70"
-              alt="Shinu Rajoriya behind the camera"
+              alt="Arjun Mehra behind the camera"
               loading="lazy"
               className="aspect-[3/4] w-full object-cover"
             />
@@ -25,7 +25,7 @@ export default function About() {
           </div>
           {/* Floating signature card */}
           <div className="absolute -bottom-5 -right-3 rounded-xl border border-gold/40 bg-ink-800/90 px-5 py-3 backdrop-blur-sm sm:-right-6">
-            <p className="font-display text-lg italic text-gold">Shinu Rajoriya</p>
+            <p className="font-display text-lg italic text-gold">Arjun Mehra</p>
             <p className="font-mono text-[10px] uppercase tracking-widest2 text-ash">
               Director / DP
             </p>
@@ -54,7 +54,7 @@ export default function About() {
             variants={fadeUp}
             className="mt-7 max-w-xl text-base leading-relaxed text-ash"
           >
-            I'm Shinu — a cinematographer and drone pilot based in Indore. For
+            I'm Arjun — a cinematographer and drone pilot based in Indore. For
             over three years I've been chasing light, emotion and motion across
             weddings, brand films and the skies above. My work lives where
             technical craft meets raw feeling: deliberate framing, intentional

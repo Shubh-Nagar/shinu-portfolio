@@ -1,6 +1,6 @@
-# Shinu Rajoriya — Cinematic Portfolio
+# Arjun Mehra — Cinematic Portfolio
 
-A cinematic, single-page portfolio for **Shinu Rajoriya** — videographer,
+A cinematic, single-page portfolio for **Arjun Mehra** — videographer,
 photographer, drone pilot & visual storyteller.
 _"Turning Moments into Masterpieces."_
 
@@ -51,7 +51,7 @@ Requires **Node 18+**.
 ## ✦ Project structure
 
 ```
-shinu-portfolio/
+arjun-portfolio/
 ├─ index.html                # SEO meta, fonts, root
 ├─ tailwind.config.js        # Cinematic palette, fonts, keyframes
 ├─ vite.config.ts            # React plugin + manual chunk splitting
@@ -85,7 +85,7 @@ shinu-portfolio/
 
 ---
 
-## ✦ Making it Shinu's (the only files you need to edit)
+## ✦ Making it Arjun's (the only files you need to edit)
 
 Everything personal lives in **two files** so you never have to dig through
 components:
@@ -93,7 +93,7 @@ components:
 ### 1. `src/data/site.ts`
 
 ```ts
-email:  "hello@shinufilms.com"   // ← real email
+email:  "hello@arjunmehrafilms.com"   // ← real email
 phone:  "+91 90000 00000"        // ← real phone
 socials.instagram / youtube / whatsapp
 showreelUrl: "https://www.youtube.com/embed/XXXX" // ← real showreel
@@ -117,8 +117,8 @@ showreelUrl: "https://www.youtube.com/embed/XXXX" // ← real showreel
 
 ### Images
 
-The portfolio currently uses Unsplash placeholders. Replace them with Shinu's
-real stills from **[@shinuu_films_41](https://www.instagram.com/shinuu_films_41)**.
+The portfolio currently uses Unsplash placeholders. Replace them with Arjun's
+real stills from **[@arjunmehra.films](https://www.instagram.com/arjunmehra.films)**.
 Best practice: download the originals into `public/work/` and reference them as
 `/work/filename.jpg`, or keep them on a CDN (Cloudinary, etc.) for automatic
 optimization.

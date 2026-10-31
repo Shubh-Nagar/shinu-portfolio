@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Play, ArrowDown } from "lucide-react";
 import EmberCanvas from "./EmberCanvas";
+import HeroIllustration from "./HeroIllustration";
 import { site } from "../data/site";
 
 interface Props {
@@ -22,7 +23,7 @@ export default function Hero({ onWatchShowreel }: Props) {
       id="hero"
       className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden lg:block"
     >
-      {/* Dark base + warm glow behind Shinu (ties his bokeh into the page) */}
+      {/* Dark base + warm glow behind the illustration */}
       <div className="absolute inset-0 bg-ink" aria-hidden="true">
         <div className="absolute right-0 top-1/2 h-[80%] w-2/3 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(217,122,43,0.22),transparent_65%)] blur-2xl" />
       </div>
@@ -37,18 +38,11 @@ export default function Hero({ onWatchShowreel }: Props) {
         <EmberCanvas />
       </div>
 
-      {/* Shinu — desktop: bleeds from the right; mobile: stacked below the copy */}
-      <motion.img
-        src="/shinu-hero.png"
-        alt="Shinu Rajoriya holding a gimbal-mounted cinema camera"
-        initial={{ opacity: 0, scale: 1.04 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        loading="eager"
-        fetchPriority="high"
-        className="order-2 z-[5] mx-auto mt-6 max-h-[46vh] w-auto select-none object-contain
-                   lg:absolute lg:bottom-0 lg:right-0 lg:order-none lg:mx-0 lg:mt-0
-                   lg:h-[94%] lg:max-h-none xl:right-[2%]"
+      {/* Camera illustration — desktop: sits on the right; mobile: stacked below the copy */}
+      <HeroIllustration
+        className="order-2 z-[5] mx-auto mt-6 h-[40vh] w-auto select-none
+                   lg:absolute lg:bottom-[8%] lg:right-0 lg:order-none lg:mx-0 lg:mt-0
+                   lg:h-[84%] xl:right-[4%]"
       />
 
       {/* Copy */}

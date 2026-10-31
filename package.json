@@ -1,8 +1,8 @@
 {
-  "name": "shinu-portfolio",
+  "name": "arjun-portfolio",
   "private": true,
   "version": "1.0.0",
-  "description": "Cinematic single-page portfolio for Shinu Rajoriya — Videographer, Photographer & Drone Pilot.",
+  "description": "Cinematic single-page portfolio for Arjun Mehra — Videographer, Photographer & Drone Pilot.",
   "type": "module",
   "scripts": {
     "dev": "vite",

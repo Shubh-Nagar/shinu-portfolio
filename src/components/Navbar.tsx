@@ -35,7 +35,7 @@ export default function Navbar() {
           href="#hero"
           className="font-display text-xl font-semibold tracking-tight text-bone"
         >
-          Shinu<span className="text-gold">.</span>
+          Arjun<span className="text-gold">.</span>
         </a>
 
         {/* Desktop links */}
@@ -52,7 +52,7 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contact" className="btn-primary !px-5 !py-2.5 !text-xs">
-              Hire Shinu
+              Hire Arjun
             </a>
           </li>
         </ul>
@@ -97,7 +97,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className="btn-primary w-full"
                 >
-                  Hire Shinu
+                  Hire Arjun
                 </a>
               </li>
               <li className="pt-2 text-center font-mono text-xs text-ash">
